@@ -1,0 +1,62 @@
+table{
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+}
+th {
+    text-align: left;
+}
+tr:nth-child(even){
+    background-color: rgba(189, 195, 199, .8);
+}
+tr:not(#theader):hover{
+    background-color: rgba(127, 140, 141, .8);
+}
+#container{
+    background-color: #EBF2F2;
+    padding: 5px;
+    margin-top: 20px;
+}
+input[type=text], select{
+    background-color: rgba(189, 195, 199, .8);
+    border: none;
+    outline: none;
+    height: 35px;
+    box-shadow: none;
+    font-size: 1.6em;
+    font-weight: 300;
+}
+button[type=submit]{
+    border: none;
+    margin-top: 0;
+    background-color: rgba(127, 140, 141, .8);
+    height: 35px;
+    color: white;
+    font-weight: bolder;
+}
+button:hover{
+    cursor: pointer;
+}
+.formContainer{
+    width: 100%;
+
+}
+table button{
+    color: white;
+    height: 30px;
+    width: 60px;
+    border-radius: 5px;
+}
+.editBtn{
+    background-color: #2980B9;
+    border: 1px solid #3498BD;
+
+}
+.deleteBtn{
+    background-color: #C0392B;
+    border: 1px solid #E74C3C;
+}
+.saveBtn{
+    background-color: #27AE60;
+    border: 1px solid #2ECC71;
+}

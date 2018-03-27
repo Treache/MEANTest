@@ -1,0 +1,61 @@
+<h1>Series Watched</h1>
+<div id="container">
+  <div class="formContainer">
+    <form (ngSubmit)="addShow()" #showForm="ngForm">
+      <label for="show">Show:</label>
+      <input type="text" id="show" [(ngModel)]="show.show" name="show" required>
+      <label for="seasons">Seasons:</label>
+      <input type="text" id="seasons" [(ngModel)]="show.seasons" name="seasons" required>
+      <label for="type">Show:</label>
+      <select [(ngModel)]="show.type" id="type" name="type" required>
+        <option value="Animated" selected>Animated</option>
+        <option value="Reality">Reality</option>
+        <option value="Comedy">Comedy</option>
+      </select>
+      <button type="submit">Add Show</button>
+    </form>
+  </div>
+  <table>
+    <tr id="theader">
+      <th>#</th>
+      <th>Show</th>
+      <th>Seasons</th>
+      <th>Type</th>
+      <th>Actions</th>
+    </tr>
+    
+    <tr *ngFor="let s of series; let i = index">
+      <div *ngIf="(editId == i) && editBool; then showEdit else showContent"></div>
+      <ng-template #showContent>
+        <td>{{ i+1 }}</td>
+        <td>{{ s.show }}</td>
+        <td>{{ s.seasons }}</td>
+        <td>{{ s.type }}</td>
+        <td>
+          <button class="editBtn" (click)="editShow(i, s.show)">Edit</button>
+          <button class="deleteBtn" (click)="removeShow(s)">Delete</button>
+        </td>
+      </ng-template>
+      <ng-template #showEdit>
+        <td>{{ i+1 }}</td>
+        <td>
+          <input type="text" [(ngModel)]="s.show" placeholder="Show">
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="s.seasons" placeholder="Seasons">
+        </td>
+        <td>
+          <select [(ngModel)]="s.type" id="type" name="type">
+            <option value="Animated">Animated</option>
+            <option value="Reality">Reality</option>
+            <option value="Comedy">Comedy</option>
+          </select>
+        </td>
+        <td>
+          <button class="saveBtn" (click)="saveShow(s)">Save</button>
+          <button class="deleteBtn" (click)="removeShow(s)">Delete</button>
+        </td>
+      </ng-template>
+    </tr>
+  </table>
+</div>

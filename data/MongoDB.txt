@@ -1,0 +1,5 @@
+Point your MongoDB to this directory or any other directory you have created.
+
+ex.
+
+C:\Users\User\Test> mongod --dbpath="./data"
